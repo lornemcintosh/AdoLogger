@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoLogger", "AdoLogger\AdoLogger.csproj", "{AFB5F43D-DEB5-4ED1-A228-63290605F7C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoLogger.Tests", "AdoLogger.Tests\AdoLogger.Tests.csproj", "{EC0FA058-CC30-4B82-BEB1-7B3632AE5339}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFB5F43D-DEB5-4ED1-A228-63290605F7C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFB5F43D-DEB5-4ED1-A228-63290605F7C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFB5F43D-DEB5-4ED1-A228-63290605F7C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFB5F43D-DEB5-4ED1-A228-63290605F7C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC0FA058-CC30-4B82-BEB1-7B3632AE5339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC0FA058-CC30-4B82-BEB1-7B3632AE5339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC0FA058-CC30-4B82-BEB1-7B3632AE5339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC0FA058-CC30-4B82-BEB1-7B3632AE5339}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41FFE5F9-485F-440E-A8C5-941C6D6C3B9D}
+	EndGlobalSection
+EndGlobal
