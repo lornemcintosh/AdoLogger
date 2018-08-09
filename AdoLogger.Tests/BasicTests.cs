@@ -12,7 +12,7 @@ namespace AdoLogger.Tests
         public BasicTests()
         {
             Log.Logger = new LoggerConfiguration()
-                //.WriteTo.Console()
+                .MinimumLevel.Verbose()
                 .WriteTo.File("log-.txt", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
         }
@@ -24,10 +24,10 @@ namespace AdoLogger.Tests
             var loggingConn = new LoggingDbConnection(conn);
 
             loggingConn.Open();
-            loggingConn.Execute("CREATE TABLE TestTable (Id int null)");
+            loggingConn.Execute("CREATE TABLE TestTable (Id int null, Test nvarchar(10) null)");
 
-            var obj = new[] { new { Id = 1 }, new { Id = 2 } };
-            loggingConn.Execute("INSERT INTO TestTable VALUES (@Id)", obj);
+            var obj = new[] { new { Id = 1, Test = "test1" }, new { Id = 2, Test = "test2" } };
+            loggingConn.Execute("INSERT INTO TestTable VALUES (@Id, @Test)", obj);
             loggingConn.Close();
         }
 

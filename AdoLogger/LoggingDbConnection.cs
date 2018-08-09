@@ -65,7 +65,7 @@ namespace AdoLogger
         /// </summary>
         public override void Close()
         {
-            Logger.Info("Closing {0} connection to {1}", _connection.GetType(), DataSource);
+            Logger.Trace("Closing {0} connection to {1}", _connection.GetType(), DataSource);
             try
             { 
                 _connection.Close();
@@ -82,7 +82,7 @@ namespace AdoLogger
         /// </summary>
         public override void Open()
         {
-            Logger.Info("Opening {0} connection to {1}", _connection.GetType(), DataSource);
+            Logger.Trace("Opening {0} connection to {1}", _connection.GetType(), DataSource);
             try
             {
                 _connection.Open();

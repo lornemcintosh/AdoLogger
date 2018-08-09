@@ -170,7 +170,7 @@ namespace AdoLogger
             try
             {
                 result = _command.ExecuteNonQuery();
-                Logger.Info("Affected {0} rows", result);
+                Logger.Debug("Affected {0} rows", result);
             }
             catch (Exception e)
             {
@@ -196,7 +196,7 @@ namespace AdoLogger
             try
             {
                 result = await _command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
-                Logger.Info("Affected {0} rows", result);
+                Logger.Debug("Affected {0} rows", result);
             }
             catch (Exception e)
             {
@@ -222,7 +222,7 @@ namespace AdoLogger
             try
             {
                 result = _command.ExecuteScalar();
-                Logger.Info("Scalar result: {@result}", result);
+                Logger.Debug("Scalar result: {@result}", result);
             }
             catch (Exception e)
             {
@@ -249,7 +249,7 @@ namespace AdoLogger
             try
             {
                 result = await _command.ExecuteScalarAsync(cancellationToken).ConfigureAwait(false);
-                Logger.Info("Scalar result: {@result}", result);
+                Logger.Debug("Scalar result: {@result}", result);
             }
             catch (Exception e)
             {
@@ -303,9 +303,8 @@ namespace AdoLogger
         /// </summary>
         private void LogQuery()
         {
-            var parameters = from DbParameter p in _command.Parameters
-                             select new { p.ParameterName, p.Value };
-            Logger.Log(LogLevel.Info, () => "Server: {dataSource}, SQL: {sql}, Parameters: {@params}", null,
+            var parameters = _command.Parameters.Cast<DbParameter>().ToDictionary( p => p.ParameterName, p => p.Value);
+            Logger.Debug("Server: {dataSource}, SQL: {sql}, Parameters: {@params}",
                 _command.Connection.DataSource, _command.CommandText, parameters);
         }
     }
